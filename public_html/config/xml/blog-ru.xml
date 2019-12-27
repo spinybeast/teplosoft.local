@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.prestashop.com/en/blog/feed.xml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <channel>
+    <title>Blog Feed</title>
+    <link>https://www.prestashop.com/en/blog/feed.xml</link>
+    <description></description>
+    <language>en</language>
+     <atom:link href="https://www.prestashop.com/en/blog/feed.xml" rel="self" type="application/rss+xml" />
+      <item>
+    <title>Local SEO: Best Practices</title>
+    <link>https://www.prestashop.com/en/blog/local-seo-best-practices</link>
+    <description>SEO is an important factor when it comes to website traffic for e-commerce business. This is the reason why focusing on building your SEO practices is a great step in the right direction.</description>
+     <pubDate>Fri, 15 Nov 2019 14:04:06 +0100</pubDate>
+ <dc:creator>John Ahya</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/local-seo-best-practices</guid>
+  </item>
+  <item>
+    <title>How to calculate your average basket?</title>
+    <link>https://www.prestashop.com/en/blog/how-to-calculate-your-average-basket</link>
+    <description>The ultimate objective of any e-commerce business is to drive revenue, and e-commerce merchants come up with new strategies and ideas every now and then to scale-up their revenue graph.</description>
+     <pubDate>Wed, 13 Nov 2019 12:11:54 +0100</pubDate>
+ <dc:creator>NitinSrivastavaen</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/how-to-calculate-your-average-basket</guid>
+  </item>
+  <item>
+    <title>How to Improve the UX of Your Shop</title>
+    <link>https://www.prestashop.com/en/blog/how-to-improve-UX-shop</link>
+    <description>User experience (UX) design has a direct relation to the future of retail.</description>
+     <pubDate>Fri, 08 Nov 2019 14:01:52 +0100</pubDate>
+ <dc:creator>John Ahya</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/how-to-improve-UX-shop</guid>
+  </item>
+  <item>
+    <title>Five Good Reasons to Set up Live Chat on Your Ecommerce Site</title>
+    <link>https://www.prestashop.com/en/blog/five-good-reasons-live-chat</link>
+    <description>Do you remember the last time you tried to call a company but got a busy signal? Or maybe you were trying to solve your problems via email, but it was taking ages.</description>
+     <pubDate>Wed, 06 Nov 2019 14:13:13 +0100</pubDate>
+ <dc:creator>Daria Zaboj</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/five-good-reasons-live-chat</guid>
+  </item>
+  <item>
+    <title>Five common questions about ad fraud</title>
+    <link>https://www.prestashop.com/en/blog/five-common-questions-about-ad-fraud</link>
+    <description>At NS8, we help companies make the most out of their digital advertising campaigns and reduce the impact of ad fraud.</description>
+     <pubDate>Mon, 04 Nov 2019 10:57:49 +0100</pubDate>
+ <dc:creator>JackieLong</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/five-common-questions-about-ad-fraud</guid>
+  </item>
+  <item>
+    <title>Ten search marketing tips to fully maximise the 2019 festive season</title>
+    <link>https://www.prestashop.com/en/blog/search-marketing-tips-maximise-2019-festiv-season</link>
+    <description>With the festive high-season just around the corner and with some competitors having launched their seasonal campaigns as early as August (yes, really), Booster Box is here to help.</description>
+     <pubDate>Thu, 31 Oct 2019 17:55:57 +0100</pubDate>
+ <dc:creator>Kirsty MacDonald</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/search-marketing-tips-maximise-2019-festiv-season</guid>
+  </item>
+  <item>
+    <title>Five tips to expand internationally</title>
+    <link>https://www.prestashop.com/en/blog/tips-to-expand-internationally</link>
+    <description>A decision to expand business is never easy, especially when you want to conquer new, international markets. There are several things which should consider before making such a decision.</description>
+     <pubDate>Thu, 24 Oct 2019 18:12:16 +0200</pubDate>
+ <dc:creator>Code Sphere Network</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/tips-to-expand-internationally</guid>
+  </item>
+  <item>
+    <title>E-commerce Shipping: Trends and Future</title>
+    <link>https://www.prestashop.com/en/blog/e-commerce-shipping-trends-future</link>
+    <description>Nothing provides more satisfaction to online shoppers than a quick delivery.</description>
+     <pubDate>Wed, 23 Oct 2019 14:36:33 +0200</pubDate>
+ <dc:creator>NitinSrivastavaen</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/e-commerce-shipping-trends-future</guid>
+  </item>
+  <item>
+    <title>How to create a welcome email series for new contacts</title>
+    <link>https://www.prestashop.com/en/blog/create-welcome-email-series-contacts</link>
+    <description>When done right, welcome email series can bring impressive results. This article explains why you should create one for your business and shows a few tips and examples on how to do it right.</description>
+     <pubDate>Mon, 21 Oct 2019 14:20:40 +0200</pubDate>
+ <dc:creator>Klimczak</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/create-welcome-email-series-contacts</guid>
+  </item>
+  <item>
+    <title>Top 3 Strategies to Boost Your E-commerce</title>
+    <link>https://www.prestashop.com/en/blog/strategies-boost-e-commerce</link>
+    <description>Your ecommerce store is critical to broadening your brand and increasing your reach.</description>
+     <pubDate>Thu, 17 Oct 2019 18:56:35 +0200</pubDate>
+ <dc:creator>rajbarman</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/strategies-boost-e-commerce</guid>
+  </item>
+  </channel>
+</rss>

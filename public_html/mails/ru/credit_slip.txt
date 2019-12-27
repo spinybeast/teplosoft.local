@@ -1,0 +1,13 @@
+{shop_url}
+
+Здравствуйте, {firstname} {lastname},
+
+Код заказа {order_name} - Кредитная квитанция
+
+A credit slip has been generated in your name for order with the reference {order_name}.
+
+Просмотрите эту квитанцию и скачайте ваш счёт, затем перейдите в раздел [Платёжные квитанции]({history_url}) вашего аккаунта.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](http://www.prestashop.com/)

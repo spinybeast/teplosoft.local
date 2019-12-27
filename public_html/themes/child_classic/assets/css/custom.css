@@ -1,0 +1,288 @@
+/*
+ * Custom code goes here.
+ * A template should always ship with an empty custom.css
+ */
+@import url('https://fonts.googleapis.com/css?family=Scada&display=swap');
+
+body {
+    font-family: 'Scada', sans-serif !important;
+}
+
+#header .logo {
+    margin-left: 15px;
+}
+
+#header .header-top {
+    padding: 0
+}
+
+#header .header-top .menu {
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+
+#header .header-top .top-menu {
+    margin: 0
+}
+
+#header .header-top a[data-depth="0"] {
+    color: #F95738;
+    text-transform: none;
+}
+
+#header .header-top .current a, #header .top-menu a[data-depth="0"]:hover {
+    color: #083D77;
+}
+
+#header .header-nav {
+    border-bottom-color: #fed535;
+    max-height: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#header .header-nav .main_line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header .header-nav .header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header .header-nav .cart-preview, #header .header-nav .cart-preview.active {
+    background: none;
+}
+
+#header .header-nav .cart-preview a, #header .header-nav .cart-preview span, #header .header-nav .cart-preview i, #header .header-nav .cart-preview.active a, #header .header-nav .cart-preview.active i, #header a:hover {
+    color: #083D77 !important;
+}
+
+#header .header-nav .cart-preview.active:hover a, #header .header-nav .cart-preview.active:hover span, #header .header-nav .cart-preview.active:hover i {
+    color: #F95738 !important;
+}
+
+#header .header-nav .phone {
+    font-weight: bold;
+    display: block;
+    color: #232323
+}
+
+#header .header-nav .hours {
+    display: block;
+    font-size: 11px;
+    color: #7a7a7a;
+}
+
+#header .header-nav .user-info {
+    margin: 0
+}
+
+#header .header-nav .blockcart {
+    height: auto;
+    padding: 0
+}
+
+#header .header-nav .blockcart .header {
+    margin: 0
+}
+
+.search-widget {
+    margin-top: 8px;
+}
+
+.search-widget form input[type=text] {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #7a7a7a;
+}
+
+.search-widget form button[type=submit] {
+    bottom: 3px;
+}
+
+.search-widget form input[type=text]:focus {
+    outline: none
+}
+
+.search-widget form input[type=text]:focus + button .search {
+    color: #F95738;
+}
+
+.footer-container li a:hover {
+    color: #F95738;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.carousel .carousel-inner {
+    height: auto
+}
+
+.carousel .carousel-item .caption {
+    bottom: 60px;
+    right: 20px;
+    left: auto;
+    color: #464646;
+    max-width: 480px;
+}
+
+.carousel .carousel-item .caption .display-1 {
+    font-size: 40px;
+    text-transform: none !important;
+}
+
+.rules_table td {
+    font-size: .9375rem;
+    padding: 5px 10px;
+    border: 1px solid #F95738;
+}
+
+.rules_table tr:first-child td {
+    font-weight: bold;
+    background: #f1f1f1;
+    color: #4a4a4a;
+}
+
+p {
+    color: #404040
+}
+
+.btn-primary, .btn-secondary, .btn-tertiary {
+    border-radius: 3px
+}
+
+.btn-primary {
+    background-color: #FF7620;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.disabled.focus, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary:disabled.focus, .btn-primary:disabled:focus, .btn-primary:disabled:hover,.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.btn-primary.dropdown-toggle.focus, .open>.btn-primary.dropdown-toggle:focus, .open>.btn-primary.dropdown-toggle:hover {
+    background-color: #F95738;
+}
+
+.product-price, .has-discount.product-price, .has-discount p {
+    color: #FF7620;
+}
+
+.has-discount .discount {
+    background: #fedb37;
+}
+
+.custom-radio input[type=radio]:checked + span {
+    background-color: #F95738;
+}
+
+.form-control {
+    border-radius: 3px;
+}
+
+.form-control:focus {
+    outline: none !important;
+    border-color: #F95738
+}
+
+a, .cart-grid-body a.label:hover {
+    color: #083D77;
+}
+
+.product-images > li.thumb-container > .thumb.selected, .product-images > li.thumb-container > .thumb:hover {
+    border: 2px solid #F95738;
+}
+
+#blockcart-modal .product-name {
+    color: #083D77;
+}
+
+.form-control-select {
+    padding: inherit;
+}
+
+.row.delivery-option .row {
+    display: flex;
+    align-items: center;
+}
+
+body#checkout section.checkout-step .delivery-option {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+body#checkout section.checkout-step .delivery-option label {
+    margin: 0
+}
+
+body#checkout section.checkout-step .address-item.selected {
+    border: 1px solid #FEDB37;
+    border-radius: 3px;
+}
+
+body#checkout section.checkout-step .address-footer {
+    text-transform: lowercase;
+}
+
+.contact-rich .block a[href^="mailto:"] {
+    margin: 0;
+}
+
+.block-contact {
+    font-size: .875rem;
+    line-height: 1.9;
+}
+
+#blockcart-modal .cart-content .cart-content-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+#blockcart-modal .cart-content p {
+    padding: 0;
+}
+
+#blockcart-modal .modal-body {
+    padding: 30px 20px;
+}
+
+.top-menu a[data-depth="1"], .top-menu a[data-depth="2"] {
+    padding: 5px 0;
+}
+
+.product-description ul, [id^='product-description'] > ul {
+    margin-left: 20px;
+    list-style-type: square;
+}
+
+.product-flags li.product-flag {
+    background: #ff7620;
+}
+
+.product-flags li.product-flag.discount {
+    background: #FEDB37;
+}
+
+#products .thumbnail-container:focus .highlighted-informations.no-variants, #products .thumbnail-container:hover .highlighted-informations.no-variants, .featured-products .thumbnail-container:focus .highlighted-informations.no-variants, .featured-products .thumbnail-container:hover .highlighted-informations.no-variants, .product-accessories .thumbnail-container:focus .highlighted-informations.no-variants, .product-accessories .thumbnail-container:hover .highlighted-informations.no-variants, .product-miniature .thumbnail-container:focus .highlighted-informations.no-variants, .product-miniature .thumbnail-container:hover .highlighted-informations.no-variants {
+    bottom: 5.6rem;
+}
+
+#products .product-title, .featured-products .product-title, .product-accessories .product-title, .product-miniature .product-title {
+    padding: 0 10px;
+}
+
+#products .product-description, .featured-products .product-description, .product-accessories .product-description, .product-miniature .product-description {
+    height: 100px;
+}
+
+.pagination .current a {
+    color: #ff7620;
+}
+
+.product-features > dl.data-sheet dd.value, .product-features > dl.data-sheet dt.name {
+    text-transform: none;
+}
+
+body#checkout .additional-information {margin-left: 0 !important}
