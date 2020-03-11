@@ -619,6 +619,18 @@ class CustomerCore extends ObjectModel
         return $addresses;
     }
 
+    public function getSimplePickupAddresses()
+    {
+        $sql = $this->getSimpleAddressesSql(null, null, [13]);
+        $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
+        $addresses = array();
+        foreach ($result as $addr) {
+            $addresses[$addr['id']] = $addr;
+        }
+
+        return $addresses;
+    }
+
     /**
      * Get Address as array.
      *
@@ -671,7 +683,7 @@ class CustomerCore extends ObjectModel
      *
      * @return string
      */
-    public function getSimpleAddressSql($idAddress = null, $idLang = null)
+    public function getSimpleAddressSql($idAddress = null, $idLang = null, $idAddresses = null)
     {
         if (null === $idLang) {
             $idLang = Context::getContext()->language->id;
@@ -713,10 +725,59 @@ class CustomerCore extends ObjectModel
         if (null !== $idAddress) {
             $sql .= ' AND a.`id_address` = ' . (int) $idAddress;
         }
+        if (null !== $idAddresses) {
+            $sql .= ' AND a.`id_address` IN (' . join(',', $idAddresses) . ')';
+        }
 
         return $sql;
     }
+    public function getSimpleAddressesSql($idAddress = null, $idLang = null, $idAddresses = null)
+    {
+        if (null === $idLang) {
+            $idLang = Context::getContext()->language->id;
+        }
+        $shareOrder = (bool) Context::getContext()->shop->getGroup()->share_order;
 
+        $sql = 'SELECT DISTINCT
+                      a.`id_address` AS `id`,
+                      a.`alias`,
+                      a.`firstname`,
+                      a.`lastname`,
+                      a.`company`,
+                      a.`address1`,
+                      a.`address2`,
+                      a.`postcode`,
+                      a.`city`,
+                      a.`id_state`,
+                      s.name AS state,
+                      s.`iso_code` AS state_iso,
+                      a.`id_country`,
+                      cl.`name` AS country,
+                      co.`iso_code` AS country_iso,
+                      a.`other`,
+                      a.`phone`,
+                      a.`phone_mobile`,
+                      a.`vat_number`,
+                      a.`dni`
+                    FROM `' . _DB_PREFIX_ . 'address` a
+                    LEFT JOIN `' . _DB_PREFIX_ . 'country` co ON (a.`id_country` = co.`id_country`)
+                    LEFT JOIN `' . _DB_PREFIX_ . 'country_lang` cl ON (co.`id_country` = cl.`id_country`)
+                    LEFT JOIN `' . _DB_PREFIX_ . 'state` s ON (s.`id_state` = a.`id_state`)
+                    ' . ($shareOrder ? '' : Shop::addSqlAssociation('country', 'co')) . '
+                    WHERE
+                        `id_lang` = ' . (int) $idLang . '
+                        AND a.`deleted` = 0
+                        AND a.`active` = 1';
+
+        if (null !== $idAddress) {
+            $sql .= ' AND a.`id_address` = ' . (int) $idAddress;
+        }
+        if (null !== $idAddresses) {
+            $sql .= ' AND a.`id_address` IN (' . join(',', $idAddresses) . ')';
+        }
+
+        return $sql;
+    }
     /**
      * Count the number of addresses for a customer.
      *

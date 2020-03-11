@@ -32,7 +32,7 @@
       data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
     >
 
-      {if !$use_same_address}
+{*      {if !$use_same_address}
         <h2 class="h4">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
       {/if}
 
@@ -44,8 +44,7 @@
         <p>
           {l s='The selected address will be used as your personal address (for invoice).' d='Shop.Theme.Checkout'}
         </p>
-      {/if}
-
+      {/if}*}
       {if $show_delivery_address_form}
         <div id="delivery-address">
           {render file                      = 'checkout/_partials/address-form.tpl'
@@ -76,13 +75,13 @@
           <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
         </p>
 
-        {if $use_same_address && !$cart.is_virtual}
+        {*{if $use_same_address && !$cart.is_virtual}
           <p>
             <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
               {l s='Billing address differs from shipping address' d='Shop.Theme.Checkout'}
             </a>
           </p>
-        {/if}
+        {/if}*}
 
       {/if}
 

@@ -64,12 +64,12 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
     {
         $this->addressForm->setAction($this->getCheckoutSession()->getCheckoutURL());
 
-        if (array_key_exists('use_same_address', $requestParams)) {
+        /*if (array_key_exists('use_same_address', $requestParams)) {
             $this->use_same_address = (bool) $requestParams['use_same_address'];
             if (!$this->use_same_address) {
                 $this->setCurrent(true);
             }
-        }
+        }*/
 
         if (isset($requestParams['cancelAddress'])) {
             if ($requestParams['cancelAddress'] === 'invoice') {
@@ -98,7 +98,7 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
                 }
             } else {
                 if ($requestParams['saveAddress'] === 'delivery') {
-                    $this->use_same_address = isset($requestParams['use_same_address']);
+                    $this->use_same_address = true;//isset($requestParams['use_same_address']);
                 }
                 $id_address = $this->addressForm->getAddress()->id;
                 if ($requestParams['saveAddress'] === 'delivery') {
@@ -251,6 +251,7 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
             'show_delivery_address_form' => $this->show_delivery_address_form,
             'show_invoice_address_form' => $this->show_invoice_address_form,
             'form_has_continue_button' => $this->form_has_continue_button,
+            'selected_delivery_option_id' => $this->getCheckoutSession()->getSelectedDeliveryOption(),
         );
 
         /** @var OrderControllerCore $controller */

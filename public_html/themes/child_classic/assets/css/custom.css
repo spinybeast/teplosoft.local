@@ -121,15 +121,17 @@ body {
 }
 
 .carousel .carousel-inner {
-    height: auto
+    height: auto;
+    pointer-events: none;
 }
 
 .carousel .carousel-item .caption {
     bottom: 60px;
     right: 20px;
     left: auto;
-    color: #464646;
+    color: #ffffff;
     max-width: 480px;
+    text-shadow: 2px 1px 1px rgba(0,0,0,.5);
 }
 
 .carousel .carousel-item .caption .display-1 {
@@ -286,3 +288,11 @@ body#checkout section.checkout-step .address-footer {
 }
 
 body#checkout .additional-information {margin-left: 0 !important}
+
+.featured-products .products {
+    justify-content: space-between;
+}
+
+.featured-products .product-miniature {
+    margin: 0;
+}

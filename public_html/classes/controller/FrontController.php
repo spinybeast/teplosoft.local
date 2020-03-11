@@ -501,6 +501,7 @@ class FrontControllerCore extends Controller
             'time' => time(),
             'static_token' => Tools::getToken(false),
             'token' => Tools::getToken(),
+            'pickup_addresses' => $this->getTemplateVarPickupAddresses()
         );
 
         $modulesVariables = Hook::exec('actionFrontControllerSetVariables', [], null, true);
@@ -1594,6 +1595,15 @@ class FrontControllerCore extends Controller
         $cust['addresses'] = $addresses;
 
         return $cust;
+    }
+
+    public function getTemplateVarPickupAddresses()
+    {
+        $addresses = $this->context->customer->getSimplePickupAddresses();
+        foreach ($addresses as &$a) {
+            $a['formatted'] = AddressFormat::generateAddress(new Address($a['id']), array(), '<br>');
+        }
+        return $addresses;
     }
 
     public function getTemplateVarShop()

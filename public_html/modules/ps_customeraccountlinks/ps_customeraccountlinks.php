@@ -103,10 +103,10 @@ class Ps_Customeraccountlinks extends Module implements WidgetInterface
                 'title' => $this->trans('Orders', array(), 'Admin.Global'),
                 'url' => $link->getPageLink('history', true),
             ),
-            3 => array(
+            /*3 => array(
                 'title' => $this->trans('Credit slips', array(), 'Modules.Customeraccountlinks.Admin'),
                 'url' => $link->getPageLink('order-slip', true),
-            ),
+            ),*/
             4 => array(
                 'title' => $this->trans('Addresses', array(), 'Shop.Theme.Global'),
                 'url' => $link->getPageLink('addresses', true),

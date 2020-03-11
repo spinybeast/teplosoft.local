@@ -42,18 +42,22 @@
       <div class="card noshadow">
         <div class="card-block">
           <h4 class="h5 black addresshead">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
-          {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
+          {if $selected_delivery_option.id === 26}
+            {$pickup_addresses[13]['formatted'] nofilter}
+          {else}
+            {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
+          {/if}
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    {*<div class="col-md-6">
       <div class="card noshadow">
         <div class="card-block">
           <h4 class="h5 black addresshead">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
           {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
         </div>
       </div>
-    </div>
+    </div>*}
   </div>
 
   <div class="row">

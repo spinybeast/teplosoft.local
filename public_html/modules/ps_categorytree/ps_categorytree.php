@@ -273,6 +273,9 @@ class Ps_CategoryTree extends Module implements WidgetInterface
                 $this->context->cookie->last_visited_category = (int)$product->id_category_default;
             }
         }
+        if ($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['REQUEST_URI'] == "/") {
+            $this->context->cookie->last_visited_category = (int)Configuration::get('PS_HOME_CATEGORY');
+        }
     }
 
     public function renderWidget($hookName = null, array $configuration = [])
