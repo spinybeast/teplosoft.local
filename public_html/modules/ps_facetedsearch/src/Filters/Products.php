@@ -26,6 +26,7 @@
 
 namespace PrestaShop\Module\FacetedSearch\Filters;
 
+use PrestaShop\Module\FacetedSearch\Hook\Feature;
 use PrestaShop\Module\FacetedSearch\Product\Search;
 use PrestaShop\Module\FacetedSearch\Adapter\AbstractAdapter;
 use Product;
@@ -90,7 +91,11 @@ class Products
             $this->searchAdapter->addSelectField('price_min');
             $this->searchAdapter->addSelectField('price_max');
         }
-
+        //Внимание, мега костыль для слайдера по площади обогрева
+        if (isset($selectedFilters[Converter::TYPE_HEATING_AREA])) {
+            $matchingIds = $this->getHeatingAreaMatchingIds($selectedFilters[Converter::TYPE_HEATING_AREA]);
+            $this->searchAdapter->addFilter('id_product', ['(' . implode(',', $matchingIds) . ')'], ' IN ');
+        }
         $matchingProductList = $this->searchAdapter->execute();
 
         $this->pricePostFiltering($matchingProductList, $selectedFilters);
@@ -170,5 +175,27 @@ class Products
                 }
             }
         }
+    }
+
+    //Внимание, мега костыль для слайдера по площади обогрева
+    function getHeatingAreaMatchingIds($filter) {
+        $min = (float) ($filter[0]);
+        $max = (float) ($filter[1]);
+        $allValues = \FeatureValue::getFeatureValuesWithLang(1, Converter::ID_HEATING_AREA);
+        $matchingValues = [];
+        foreach ($allValues as $value) {
+            if (strpos($value['value'], '-') !== false) {
+                list($minValue, $maxValue) = explode('-', $value['value']);
+                if (!(((float)$minValue < $min && (float)$maxValue < $min) || ((float)$minValue > $max && (float)$maxValue > $max))) {
+                    $matchingValues[] = $value['id_feature_value'];
+                }
+            } else if ((float)$value['value'] >= $min && (float)$value['value'] <= $max) {
+                $matchingValues[] = $value['id_feature_value'];
+            }
+        }
+        $productIds = Product::getProductIdsWithFeatureValues($matchingValues);
+        return array_map(function ($id) {
+            return $id['id_product'];
+        }, $productIds);
     }
 }

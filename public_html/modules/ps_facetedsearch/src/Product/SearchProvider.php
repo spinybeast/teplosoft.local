@@ -33,6 +33,7 @@ use PrestaShop\Module\FacetedSearch\URLSerializer;
 use PrestaShop\PrestaShop\Core\Product\Search\Facet;
 use PrestaShop\PrestaShop\Core\Product\Search\FacetCollection;
 use PrestaShop\PrestaShop\Core\Product\Search\FacetsRendererInterface;
+use PrestaShop\PrestaShop\Core\Product\Search\Filter;
 use PrestaShop\PrestaShop\Core\Product\Search\ProductSearchContext;
 use PrestaShop\PrestaShop\Core\Product\Search\ProductSearchProviderInterface;
 use PrestaShop\PrestaShop\Core\Product\Search\ProductSearchQuery;
@@ -164,7 +165,7 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
         );
 
         $filterBlock = $filterBlockSearch->getFromCache($filterHash);
-        if (empty($filterBlock)) {
+        if (empty($filterBlock) || 1) {
             $filterBlock = $filterBlockSearch->getFilterBlock($productsAndCount['count'], $facetedSearchFilters);
             $filterBlockSearch->insertIntoCache($filterHash, $filterBlock);
         }
@@ -360,6 +361,16 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
                             '%1$s - %2$s',
                             Tools::displayPrice($min),
                             Tools::displayPrice($max)
+                        )
+                    );
+                } elseif ($facet->getType() === Filters\Converter::TYPE_HEATING_AREA) {
+                    $filter->setLabel(
+                        sprintf(
+                            '%1$s%2$s - %3$s%4$s',
+                            Tools::displayNumber($min),
+                            'м.кв.',
+                            Tools::displayNumber($max),
+                            'м.кв.'
                         )
                     );
                 }

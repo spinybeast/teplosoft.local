@@ -113,8 +113,19 @@ class Block
             'FROM ' . _DB_PREFIX_ . 'layered_category ' .
             'WHERE id_category = ' . $idParent . ' ' .
             'AND id_shop = ' . $idShop . ' ' .
+            'AND id_value <> ' . Converter::ID_HEATING_AREA . ' OR id_value IS NULL ' . //Внимание, мега костыль для слайдера по площади обогрева
             'GROUP BY `type`, id_value ORDER BY position ASC'
         );
+
+        //Внимание, мега костыль для слайдера по площади обогрева
+        $heatingFilter = [
+            'type' => Converter::TYPE_HEATING_AREA,
+            'filter_type' => '0',
+            'id_value' => null,
+            'filter_show_limit' => '0'
+        ];
+
+        array_splice($filters, 3, 0, [$heatingFilter]);
 
         $filterBlocks = [];
         // iterate through each filter, and the get corresponding filter block
@@ -125,6 +136,9 @@ class Block
                     break;
                 case 'weight':
                     $filterBlocks[] = $this->getWeightRangeBlock($filter, $selectedFilters, $nbProducts);
+                    break;
+                case Converter::TYPE_HEATING_AREA:
+                    $filterBlocks[] = $this->getHeatingAreaRangeBlock($filter, $selectedFilters, $nbProducts);
                     break;
                 case 'condition':
                     $filterBlocks[] = $this->getConditionsBlock($filter, $selectedFilters);
@@ -264,7 +278,7 @@ class Block
             'nbr' => $nbProducts,
         ];
 
-        list($priceMinFilter, $priceMaxFilter, $weightFilter) = $this->ignorePriceAndWeightFilters(
+        list($priceMinFilter, $priceMaxFilter, $weightFilter, $heatingAreaFilter) = $this->ignorePriceAndWeightFilters(
             $this->searchAdapter->getInitialPopulation()
         );
 
@@ -275,10 +289,58 @@ class Block
             $this->searchAdapter->getInitialPopulation(),
             $priceMinFilter,
             $priceMaxFilter,
-            $weightFilter
+            $weightFilter,
+            $heatingAreaFilter
         );
 
         return $priceBlock;
+    }
+
+    //Внимание, мега костыль для слайдера по площади обогрева
+    private function getHeatingAreaRangeBlock($value, $selectedFilters, $nbProducts)
+    {
+        $block = [
+            'type_lite' => Converter::TYPE_HEATING_AREA,
+            'type' => Converter::TYPE_HEATING_AREA,
+            'id_key' => 0,
+            'name' => 'Площадь обогрева',
+            'max' => '0',
+            'min' => null,
+            'unit' => 'м.кв.',
+            'filter_show_limit' => (int) $value['filter_show_limit'],
+            'filter_type' => Converter::WIDGET_TYPE_SLIDER,
+            'nbr' => $nbProducts,
+        ];
+
+        list($priceMinFilter, $priceMaxFilter, $weightFilter, $heatingAreaFilter) = $this->ignorePriceAndWeightFilters(
+            $this->searchAdapter->getInitialPopulation()
+        );
+        $filters = [];
+        $allValues = \FeatureValue::getFeatureValuesWithLang(1, Converter::ID_HEATING_AREA);
+        foreach($allValues as $value) {
+            if (strpos($value['value'], '-') !== false) {
+                $filters = array_merge($filters, explode('-', $value['value']));
+            } else {
+                $filters[] = $value['value'];
+            }
+        }
+        $filters = array_map(function ($filter) {
+            return (float) ($filter);
+        }, array_unique($filters));
+
+        $block['min'] = min($filters);
+        $block['max'] = max($filters);
+        $block['value'] = !empty($selectedFilters[Converter::TYPE_HEATING_AREA]) ? $selectedFilters[Converter::TYPE_HEATING_AREA] : null;
+
+        $this->restorePriceAndWeightFilters(
+            $this->searchAdapter->getInitialPopulation(),
+            $priceMinFilter,
+            $priceMaxFilter,
+            $weightFilter,
+            $heatingAreaFilter
+        );
+
+        return $block;
     }
 
     /**
@@ -296,14 +358,17 @@ class Block
         $priceMinFilter = $filteredSearchAdapter->getFilter('price_min');
         $priceMaxFilter = $filteredSearchAdapter->getFilter('price_max');
         $weightFilter = $filteredSearchAdapter->getFilter('weight');
+        $heatingAreaFilter = $filteredSearchAdapter->getFilter(Converter::TYPE_HEATING_AREA);
         $filteredSearchAdapter->resetFilter('price_min');
         $filteredSearchAdapter->resetFilter('price_max');
         $filteredSearchAdapter->resetFilter('weight');
+        $filteredSearchAdapter->resetFilter(Converter::TYPE_HEATING_AREA);
 
         return [
             $priceMinFilter,
             $priceMaxFilter,
             $weightFilter,
+            $heatingAreaFilter
         ];
     }
 
@@ -314,6 +379,7 @@ class Block
      * @param int $priceMinFilter
      * @param int $priceMaxFilter
      * @param int $weightFilter
+     * @param int $heatingAreaFilter
      *
      * @return array
      */
@@ -321,12 +387,14 @@ class Block
         $filteredSearchAdapter,
         $priceMinFilter,
         $priceMaxFilter,
-        $weightFilter
+        $weightFilter,
+        $heatingAreaFilter
     ) {
         // put back the price and weight filters
         $filteredSearchAdapter->setFilter('price_min', $priceMinFilter);
         $filteredSearchAdapter->setFilter('price_max', $priceMaxFilter);
         $filteredSearchAdapter->setFilter('weight', $weightFilter);
+        $filteredSearchAdapter->setFilter(Converter::TYPE_HEATING_AREA, $heatingAreaFilter);
     }
 
     /**
@@ -355,7 +423,7 @@ class Block
             'nbr' => $nbProducts,
         ];
 
-        list($priceMinFilter, $priceMaxFilter, $weightFilter) = $this->ignorePriceAndWeightFilters(
+        list($priceMinFilter, $priceMaxFilter, $weightFilter, $heatingAreaFilter) = $this->ignorePriceAndWeightFilters(
             $this->searchAdapter->getInitialPopulation()
         );
 
@@ -371,7 +439,8 @@ class Block
             $this->searchAdapter->getInitialPopulation(),
             $priceMinFilter,
             $priceMaxFilter,
-            $weightFilter
+            $weightFilter,
+            $heatingAreaFilter
         );
 
         return $weightBlock;

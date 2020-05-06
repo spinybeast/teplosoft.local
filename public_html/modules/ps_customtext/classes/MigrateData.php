@@ -70,7 +70,7 @@ class MigrateData
         $shopsIds = Shop::getShops(true, null, true);
         $customTexts = array_intersect_key($this->loadedData, $shopsIds);
 
-        $info = new CustomText();
+        $info = new CustomText1();
         $info->text = reset($customTexts);
         $return &= $info->add();
 

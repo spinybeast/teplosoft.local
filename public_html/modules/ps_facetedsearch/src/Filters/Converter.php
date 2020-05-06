@@ -56,11 +56,13 @@ class Converter
     const TYPE_MANUFACTURER = 'manufacturer';
     const TYPE_PRICE = 'price';
     const TYPE_WEIGHT = 'weight';
+    const TYPE_HEATING_AREA = 'heating_area';
+    const ID_HEATING_AREA = '11';
 
     /**
      * @var array
      */
-    const RANGE_FILTERS = [self::TYPE_PRICE, self::TYPE_WEIGHT];
+    const RANGE_FILTERS = [self::TYPE_PRICE, self::TYPE_WEIGHT, self::TYPE_HEATING_AREA];
 
     /**
      * @var Context
@@ -153,6 +155,7 @@ class Converter
                     break;
                 case self::TYPE_WEIGHT:
                 case self::TYPE_PRICE:
+                case self::TYPE_HEATING_AREA:
                     $facet
                         ->setType($filterBlock['type'])
                         ->setProperty('min', $filterBlock['min'])
@@ -222,9 +225,19 @@ class Converter
             'SELECT type, id_value, filter_show_limit, filter_type FROM ' . _DB_PREFIX_ . 'layered_category
             WHERE id_category = ' . (int) $idParent . '
             AND id_shop = ' . (int) $idShop . '
+            AND id_value <> ' . Converter::ID_HEATING_AREA . ' OR id_value IS NULL
             GROUP BY `type`, id_value ORDER BY position ASC'
         );
 
+        //Внимание, мега костыль для слайдера по площади обогрева
+        $heatingFilter = [
+            'type' => Converter::TYPE_HEATING_AREA,
+            'filter_type' => '0',
+            'id_value' => null,
+            'filter_show_limit' => '0'
+        ];
+
+        array_splice($filters, 3, 0, [$heatingFilter]);
         $urlSerializer = new URLFragmentSerializer();
         $facetAndFiltersLabels = $urlSerializer->unserialize($query->getEncodedFacets());
         foreach ($filters as $filter) {
@@ -337,6 +350,7 @@ class Converter
                     break;
                 case self::TYPE_PRICE:
                 case self::TYPE_WEIGHT:
+                case self::TYPE_HEATING_AREA:
                     if (isset($facetAndFiltersLabels[$filterLabel])) {
                         $filters = $facetAndFiltersLabels[$filterLabel];
                         if (isset($filters[1]) && isset($filters[2])) {
@@ -371,6 +385,7 @@ class Converter
             switch ($key) {
                 case self::TYPE_PRICE:
                 case self::TYPE_WEIGHT:
+                case self::TYPE_HEATING_AREA:
                     if ($value[0] === '' && $value[1] === '') {
                         unset($searchFilters[$key]);
                     }
@@ -398,6 +413,8 @@ class Converter
                 return $this->context->getTranslator()->trans('Price', [], 'Modules.Facetedsearch.Shop');
             case self::TYPE_WEIGHT:
                 return $this->context->getTranslator()->trans('Weight', [], 'Modules.Facetedsearch.Shop');
+            case self::TYPE_HEATING_AREA:
+                return 'Площадь обогрева';
             case self::TYPE_CONDITION:
                 return $this->context->getTranslator()->trans('Condition', [], 'Modules.Facetedsearch.Shop');
             case self::TYPE_QUANTITY:

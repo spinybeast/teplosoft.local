@@ -4140,6 +4140,16 @@ class ProductCore extends ObjectModel
         return self::$_cacheFeatures[$id_product];
     }
 
+    public static function getProductIdsWithFeatureValues($featureValues) {
+        return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS(
+            '
+                SELECT fp.id_product
+                FROM `' . _DB_PREFIX_ . 'feature_product` fp
+                LEFT JOIN `' . _DB_PREFIX_ . 'feature_value` fv ON (fp.id_feature_value = fv.id_feature_value)
+                WHERE fp.id_feature_value IN (' . implode(',', $featureValues) . ')'
+        );
+    }
+
     public static function cacheProductsFeatures($product_ids)
     {
         if (!Feature::isFeatureActive()) {

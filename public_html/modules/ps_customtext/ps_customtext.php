@@ -178,7 +178,7 @@ class Ps_Customtext extends Module implements WidgetInterface
         $saved = true;
         foreach ($shops as $shop) {
             Shop::setContext(Shop::CONTEXT_SHOP, $shop);
-            $info = new CustomText(Tools::getValue('id_info', 1));
+            $info = new CustomText1(Tools::getValue('id_info', 1));
             $info->text = $text;
             $saved &= $info->save();
         }
@@ -262,10 +262,10 @@ class Ps_Customtext extends Module implements WidgetInterface
     {
         $fields_value = array();
         $idShop = $this->context->shop->id;
-        $idInfo = CustomText::getCustomTextIdByShop($idShop);
+        $idInfo = CustomText1::getCustomTextIdByShop($idShop);
 
         Shop::setContext(Shop::CONTEXT_SHOP, $idShop);
-        $info = new CustomText((int)$idInfo);
+        $info = new CustomText1((int)$idInfo);
 
         $fields_value['text'] = $info->text;
         $fields_value['id_info'] = $idInfo;
@@ -307,7 +307,7 @@ class Ps_Customtext extends Module implements WidgetInterface
         $text = array();
 
         foreach ($tabTexts as $tab) {
-            $info = new CustomText();
+            $info = new CustomText1();
             foreach ($languages as $lang) {
                 $text[$lang['id_lang']] = $tab['text'];
             }
@@ -333,12 +333,12 @@ class Ps_Customtext extends Module implements WidgetInterface
      */
     public function hookActionShopDataDuplication($params)
     {
-        if ($infoId = CustomText::getCustomTextIdByShop($params['old_id_shop'])) {
+        if ($infoId = CustomText1::getCustomTextIdByShop($params['old_id_shop'])) {
             Shop::setContext(Shop::CONTEXT_SHOP, $params['old_id_shop']);
-            $oldInfo = new CustomText($infoId);
+            $oldInfo = new CustomText1($infoId);
 
             Shop::setContext(Shop::CONTEXT_SHOP, $params['new_id_shop']);
-            $newInfo = new CustomText($infoId, null, $params['new_id_shop']);
+            $newInfo = new CustomText1($infoId, null, $params['new_id_shop']);
             $newInfo->text = $oldInfo->text;
 
             $newInfo->save();
