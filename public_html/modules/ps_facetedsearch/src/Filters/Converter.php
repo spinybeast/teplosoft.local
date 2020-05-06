@@ -58,6 +58,7 @@ class Converter
     const TYPE_WEIGHT = 'weight';
     const TYPE_HEATING_AREA = 'heating_area';
     const ID_HEATING_AREA = '11';
+    const HEATING_AREA_CATEGORIES = ['10', '11', '12', '13'];
 
     /**
      * @var array
@@ -225,19 +226,22 @@ class Converter
             'SELECT type, id_value, filter_show_limit, filter_type FROM ' . _DB_PREFIX_ . 'layered_category
             WHERE id_category = ' . (int) $idParent . '
             AND id_shop = ' . (int) $idShop . '
-            AND id_value <> ' . Converter::ID_HEATING_AREA . ' OR id_value IS NULL
             GROUP BY `type`, id_value ORDER BY position ASC'
         );
 
         //Внимание, мега костыль для слайдера по площади обогрева
-        $heatingFilter = [
-            'type' => Converter::TYPE_HEATING_AREA,
-            'filter_type' => '0',
-            'id_value' => null,
-            'filter_show_limit' => '0'
-        ];
+        foreach ($filters as $key => $filter) {
+            if ($filter['id_value'] && $filter['id_value'] === Converter::ID_HEATING_AREA) {
+                $filters[$key] = [
+                    'type' => Converter::TYPE_HEATING_AREA,
+                    'filter_type' => '0',
+                    'id_value' => null,
+                    'filter_show_limit' => '0'
+                ];
+                break;
+            }
+        }
 
-        array_splice($filters, 3, 0, [$heatingFilter]);
         $urlSerializer = new URLFragmentSerializer();
         $facetAndFiltersLabels = $urlSerializer->unserialize($query->getEncodedFacets());
         foreach ($filters as $filter) {

@@ -113,19 +113,23 @@ class Block
             'FROM ' . _DB_PREFIX_ . 'layered_category ' .
             'WHERE id_category = ' . $idParent . ' ' .
             'AND id_shop = ' . $idShop . ' ' .
-            'AND id_value <> ' . Converter::ID_HEATING_AREA . ' OR id_value IS NULL ' . //Внимание, мега костыль для слайдера по площади обогрева
             'GROUP BY `type`, id_value ORDER BY position ASC'
         );
 
         //Внимание, мега костыль для слайдера по площади обогрева
-        $heatingFilter = [
-            'type' => Converter::TYPE_HEATING_AREA,
-            'filter_type' => '0',
-            'id_value' => null,
-            'filter_show_limit' => '0'
-        ];
-
-        array_splice($filters, 3, 0, [$heatingFilter]);
+        foreach ($filters as $key => $filter) {
+            if ($filter['id_value'] && $filter['id_value'] === Converter::ID_HEATING_AREA &&
+                in_array($idParent, Converter::HEATING_AREA_CATEGORIES))
+            {
+                $filters[$key] = [
+                    'type' => Converter::TYPE_HEATING_AREA,
+                    'filter_type' => '0',
+                    'id_value' => null,
+                    'filter_show_limit' => '0'
+                ];
+                break;
+            }
+        }
 
         $filterBlocks = [];
         // iterate through each filter, and the get corresponding filter block

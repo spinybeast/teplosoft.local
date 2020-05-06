@@ -58,3 +58,10 @@
     </div>
   </div>
 {/if}
+<div class="heating-area-slider">
+    <p>
+      Выбрать площадь обогрева: <span id="amount"></span> <button id="show-heating" class="btn btn-primary btn-sm">Показать</button>
+    </p>
+    <div id="slider-range_heating_area"></div>
+    <div id="heating-steps" class="hidden-xs"></div>
+</div>

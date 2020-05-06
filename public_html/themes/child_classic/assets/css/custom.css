@@ -296,3 +296,29 @@ body#checkout .additional-information {margin-left: 0 !important}
 .featured-products .product-miniature {
     margin: 0;
 }
+.heating-area-slider {
+    margin: 0 10px 50px;
+}
+.heating-area-slider p {
+    text-align: center;
+    font-size: 1.1em;
+}
+.heating-area-slider p span {
+    color: #ff7620;
+    font-weight: bold;
+}
+.heating-area-slider .ui-slider .ui-slider-handle {
+    width: 0.7em;
+    background: #fff;
+    border: 1px solid #555;
+}
+#heating-steps {
+    position: relative;
+    margin: 10px -0.7em;
+    color: #7a7a7a;
+    font-size: 0.9em;
+}
+#heating-steps span {
+    display: inline-block;
+    position: absolute;
+}

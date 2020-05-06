@@ -530,6 +530,7 @@ class Ps_ImageSlider extends Module implements WidgetInterface
         $this->context->controller->registerStylesheet('modules-homeslider', 'modules/'.$this->name.'/css/homeslider.css', ['media' => 'all', 'priority' => 150]);
         $this->context->controller->registerJavascript('modules-responsiveslides', 'modules/'.$this->name.'/js/responsiveslides.min.js', ['position' => 'bottom', 'priority' => 150]);
         $this->context->controller->registerJavascript('modules-homeslider', 'modules/'.$this->name.'/js/homeslider.js', ['position' => 'bottom', 'priority' => 150]);
+        $this->context->controller->registerJavascript('modules-slider-heating-area', 'modules/'.$this->name.'/js/heatingareaslider.js', ['position' => 'bottom', 'priority' => 150]);
     }
 
     public function renderWidget($hookName = null, array $configuration = [])
