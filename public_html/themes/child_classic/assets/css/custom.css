@@ -314,11 +314,12 @@ body#checkout .additional-information {margin-left: 0 !important}
 }
 #heating-steps {
     position: relative;
-    margin: 10px -0.7em;
+    margin: 10px 0 0 -0.7em;
     color: #7a7a7a;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 #heating-steps span {
     display: inline-block;
     position: absolute;
+    width: 15px;
 }

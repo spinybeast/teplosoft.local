@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
     });
     const steps = range(min, max);
     const spans = steps.map(function (step) {
-        return $('<span/>').html(step).css({'left': (100 / max * step) + '%'});
+        return $('<span/>').html(step).css('left', step <= 9 ? (100 / max * step) + '%' : 'calc(' + (100 / max * step) + '% - 7.5px)');
     });
     $("#heating-steps").html(spans);
 });
