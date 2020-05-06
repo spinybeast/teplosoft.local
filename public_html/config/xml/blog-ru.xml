@@ -6,84 +6,84 @@
     <language>en</language>
      <atom:link href="https://www.prestashop.com/en/blog/feed.xml" rel="self" type="application/rss+xml" />
       <item>
-    <title>Local SEO: Best Practices</title>
-    <link>https://www.prestashop.com/en/blog/local-seo-best-practices</link>
-    <description>SEO is an important factor when it comes to website traffic for e-commerce business. This is the reason why focusing on building your SEO practices is a great step in the right direction.</description>
-     <pubDate>Fri, 15 Nov 2019 14:04:06 +0100</pubDate>
- <dc:creator>John Ahya</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/local-seo-best-practices</guid>
+    <title>PrestaShop Order Fulfillment Automation with Fulfillment Bridge</title>
+    <link>https://www.prestashop.com/en/blog/fulfillment-cloud-automation</link>
+    <description>Is Fulfillment Automation what I think it is?</description>
+     <pubDate>Mon, 04 May 2020 17:23:59 +0200</pubDate>
+ <dc:creator>Kais Khadhraoui</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/fulfillment-cloud-automation</guid>
   </item>
   <item>
-    <title>How to calculate your average basket?</title>
-    <link>https://www.prestashop.com/en/blog/how-to-calculate-your-average-basket</link>
-    <description>The ultimate objective of any e-commerce business is to drive revenue, and e-commerce merchants come up with new strategies and ideas every now and then to scale-up their revenue graph.</description>
-     <pubDate>Wed, 13 Nov 2019 12:11:54 +0100</pubDate>
- <dc:creator>NitinSrivastavaen</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/how-to-calculate-your-average-basket</guid>
+    <title> COVID-19: how PrestaShop teams are dealing with the lockdown</title>
+    <link>https://www.prestashop.com/en/blog/prestashop-lockdown-tips</link>
+    <description>While lockdown is the rule, PrestaShop teams are are still at your service.</description>
+     <pubDate>Wed, 29 Apr 2020 16:13:18 +0200</pubDate>
+ <dc:creator>Aurélien Bellanger</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/prestashop-lockdown-tips</guid>
   </item>
   <item>
-    <title>How to Improve the UX of Your Shop</title>
-    <link>https://www.prestashop.com/en/blog/how-to-improve-UX-shop</link>
-    <description>User experience (UX) design has a direct relation to the future of retail.</description>
-     <pubDate>Fri, 08 Nov 2019 14:01:52 +0100</pubDate>
- <dc:creator>John Ahya</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/how-to-improve-UX-shop</guid>
+    <title>COVID-19: Key Ecommerce Figures</title>
+    <link>https://www.prestashop.com/en/blog/key-ecommerce-figures-coronavirus</link>
+    <description>After the &quot;panic buying&quot; phases focusing on basic necessities, distribution business remains significantly impacted by the Coronavirus crisis throughout the world.</description>
+     <pubDate>Mon, 27 Apr 2020 17:39:39 +0200</pubDate>
+ <dc:creator>PrestaShop Team</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/key-ecommerce-figures-coronavirus</guid>
   </item>
   <item>
-    <title>Five Good Reasons to Set up Live Chat on Your Ecommerce Site</title>
-    <link>https://www.prestashop.com/en/blog/five-good-reasons-live-chat</link>
-    <description>Do you remember the last time you tried to call a company but got a busy signal? Or maybe you were trying to solve your problems via email, but it was taking ages.</description>
-     <pubDate>Wed, 06 Nov 2019 14:13:13 +0100</pubDate>
- <dc:creator>Daria Zaboj</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/five-good-reasons-live-chat</guid>
+    <title>How to stand out in a rapidly expanding e-commerce era</title>
+    <link>https://www.prestashop.com/en/blog/stand-out-e-commerce-era</link>
+    <description>With so many shops forced into lockdown, going online is a necessity rather than a pick.</description>
+     <pubDate>Wed, 22 Apr 2020 16:16:31 +0200</pubDate>
+ <dc:creator>Vytaure Banyte</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/stand-out-e-commerce-era</guid>
   </item>
   <item>
-    <title>Five common questions about ad fraud</title>
-    <link>https://www.prestashop.com/en/blog/five-common-questions-about-ad-fraud</link>
-    <description>At NS8, we help companies make the most out of their digital advertising campaigns and reduce the impact of ad fraud.</description>
-     <pubDate>Mon, 04 Nov 2019 10:57:49 +0100</pubDate>
- <dc:creator>JackieLong</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/five-common-questions-about-ad-fraud</guid>
+    <title>COVID-19 : short term solutions for online merchants</title>
+    <link>https://www.prestashop.com/en/blog/coronavirus-solutions-merchants</link>
+    <description>Online merchants are very much economically affected by the current situation.</description>
+     <pubDate>Fri, 17 Apr 2020 15:25:02 +0200</pubDate>
+ <dc:creator>Aurélien Bellanger</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/coronavirus-solutions-merchants</guid>
   </item>
   <item>
-    <title>Ten search marketing tips to fully maximise the 2019 festive season</title>
-    <link>https://www.prestashop.com/en/blog/search-marketing-tips-maximise-2019-festiv-season</link>
-    <description>With the festive high-season just around the corner and with some competitors having launched their seasonal campaigns as early as August (yes, really), Booster Box is here to help.</description>
-     <pubDate>Thu, 31 Oct 2019 17:55:57 +0100</pubDate>
- <dc:creator>Kirsty MacDonald</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/search-marketing-tips-maximise-2019-festiv-season</guid>
+    <title>How can I migrate my PrestaShop store to a new server?</title>
+    <link>https://www.prestashop.com/en/blog/how-to-migrate-prestashop-to-a-new-server</link>
+    <description>Are you planning to migrate your PrestaShop to a new server that you think will offer better services?</description>
+     <pubDate>Wed, 15 Apr 2020 10:30:49 +0200</pubDate>
+ <dc:creator>Eva Lacalle</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/how-to-migrate-prestashop-to-a-new-server</guid>
   </item>
   <item>
-    <title>Five tips to expand internationally</title>
-    <link>https://www.prestashop.com/en/blog/tips-to-expand-internationally</link>
-    <description>A decision to expand business is never easy, especially when you want to conquer new, international markets. There are several things which should consider before making such a decision.</description>
-     <pubDate>Thu, 24 Oct 2019 18:12:16 +0200</pubDate>
- <dc:creator>Code Sphere Network</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/tips-to-expand-internationally</guid>
+    <title>How to become an e-commerce expert?</title>
+    <link>https://www.prestashop.com/en/blog/prestashop-training-ecommerce</link>
+    <description>Almost 300,000 online shops are now PrestaShops.</description>
+     <pubDate>Tue, 14 Apr 2020 15:05:32 +0200</pubDate>
+ <dc:creator>Aurélien Bellanger</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/prestashop-training-ecommerce</guid>
   </item>
   <item>
-    <title>E-commerce Shipping: Trends and Future</title>
-    <link>https://www.prestashop.com/en/blog/e-commerce-shipping-trends-future</link>
-    <description>Nothing provides more satisfaction to online shoppers than a quick delivery.</description>
-     <pubDate>Wed, 23 Oct 2019 14:36:33 +0200</pubDate>
- <dc:creator>NitinSrivastavaen</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/e-commerce-shipping-trends-future</guid>
+    <title>The main payment methods in Brazil that will boost your ecommerce conversion rates</title>
+    <link>https://www.prestashop.com/en/blog/payment-methods-brazil</link>
+    <description>Brazilian consumers are very keen to do online shopping: with more than 23 million cross-border digital buyers in the country, Brazil is the largest ecommerce market in Latin America.</description>
+     <pubDate>Mon, 06 Apr 2020 19:54:50 +0200</pubDate>
+ <dc:creator>paulamartins</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/payment-methods-brazil</guid>
   </item>
   <item>
-    <title>How to create a welcome email series for new contacts</title>
-    <link>https://www.prestashop.com/en/blog/create-welcome-email-series-contacts</link>
-    <description>When done right, welcome email series can bring impressive results. This article explains why you should create one for your business and shows a few tips and examples on how to do it right.</description>
-     <pubDate>Mon, 21 Oct 2019 14:20:40 +0200</pubDate>
- <dc:creator>Klimczak</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/create-welcome-email-series-contacts</guid>
+    <title>What is the impact of coronavirus on ecommerce activity?</title>
+    <link>https://www.prestashop.com/en/blog/infographic-ecommerce-covid-19</link>
+    <description>On March 24th, PrestaShop asked members of its ecosystem to participate in a survey regarding the impact of confinement measures on their ecommerce activity.</description>
+     <pubDate>Mon, 06 Apr 2020 19:51:53 +0200</pubDate>
+ <dc:creator>PrestaShop Team</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/infographic-ecommerce-covid-19</guid>
   </item>
   <item>
-    <title>Top 3 Strategies to Boost Your E-commerce</title>
-    <link>https://www.prestashop.com/en/blog/strategies-boost-e-commerce</link>
-    <description>Your ecommerce store is critical to broadening your brand and increasing your reach.</description>
-     <pubDate>Thu, 17 Oct 2019 18:56:35 +0200</pubDate>
- <dc:creator>rajbarman</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/en/blog/strategies-boost-e-commerce</guid>
+    <title>Killer content for SEO: Comparing and reviewing your own products</title>
+    <link>https://www.prestashop.com/en/blog/seo-comparing-products</link>
+    <description>One effective way for you to market your web shop is by comparing your products, doing in-depth reviews, and testing them.</description>
+     <pubDate>Fri, 03 Apr 2020 10:49:30 +0200</pubDate>
+ <dc:creator>bulldesign</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/en/blog/seo-comparing-products</guid>
   </item>
   </channel>
 </rss>
