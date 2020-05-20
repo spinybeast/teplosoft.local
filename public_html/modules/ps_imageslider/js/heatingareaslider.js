@@ -1,8 +1,9 @@
 jQuery(document).ready(function ($) {
     const min = 0;
-    const max = 22;
+    const max = 23;
     const step = 0.5;
     const slider = $("#slider-range_heating_area");
+    const link = '/10-tyoplyj-pol?q=Площадь+обогрева-м.кв.-';
 
     slider.slider({
         range: true,
@@ -15,13 +16,13 @@ jQuery(document).ready(function ($) {
         },
         change: function (event, ui) {
             $("#show-heating").on('click', function () {
-                window.location = '/10-tyoplyj-pol?q=Площадь+обогрева-м.кв.-'+ ui.values[0] + '-' + ui.values[1];
+                window.location = link + ui.values[0] + '-' + ui.values[1];
             });
         }
     });
     $("#amount").text(slider.slider('values', 0) + ' м.кв. - ' + slider.slider('values', 1) + ' м.кв.');
     $("#show-heating").on('click', function () {
-        window.location = '/10-tyoplyj-pol?q=Площадь+обогрева-м.кв.-'+ slider.slider('values', 0) + '-' + slider.slider('values', 1);
+        window.location = link + slider.slider('values', 0) + '-' + slider.slider('values', 1);
     });
     const steps = range(min, max);
     const spans = steps.map(function (step) {

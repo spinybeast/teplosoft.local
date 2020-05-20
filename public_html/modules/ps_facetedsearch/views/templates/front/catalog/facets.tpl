@@ -166,6 +166,7 @@
                 data-slider-values="{$filter.value|@json_encode}"
                 data-slider-unit="{$facet.properties.unit}"
                 data-slider-label="{$facet.label}"
+                data-slider-step="{if $facet.type === 'heating_area'}0.5{else}1{/if}"
                 data-slider-specifications="{$facet.properties.specifications|@json_encode}"
                 data-slider-encoded-url="{$filter.nextEncodedFacetsURL}"
               >

@@ -27,7 +27,7 @@ import getQueryParameters from './urlparser';
 import NumberFormatter from '../cldr/number-formatter';
 
 const formatters = {};
-
+console.log(23423);
 const displayLabelBlock = (formatterId, displayBlock, min, max) => {
   if (formatters[formatterId] === undefined) {
     displayBlock.text(
@@ -66,6 +66,7 @@ const refreshSliders = () => {
       range: true,
       min: $el.data('slider-min'),
       max: $el.data('slider-max'),
+      step: $el.data('slider-step') || 1,
       values: [
         values === null ? $el.data('slider-min') : values[0],
         values === null ? $el.data('slider-max') : values[1],

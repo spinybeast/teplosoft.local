@@ -332,8 +332,8 @@ class Block
             return (float) ($filter);
         }, array_unique($filters));
 
-        $block['min'] = min($filters);
-        $block['max'] = max($filters);
+        $block['min'] = 0;
+        $block['max'] = round(max($filters));
         $block['value'] = !empty($selectedFilters[Converter::TYPE_HEATING_AREA]) ? $selectedFilters[Converter::TYPE_HEATING_AREA] : null;
 
         $this->restorePriceAndWeightFilters(
