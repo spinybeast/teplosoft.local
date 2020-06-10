@@ -1197,6 +1197,7 @@ class AdminContainer extends Container
                 64 => 'yandexmodule',
                 65 => 'mib',
                 66 => 'htmlbox',
+                67 => 'ps_emailalerts',
             ],
             'ps_cache_dir' => '/var/www/teplosoft.local/public_html/var/cache/dev/',
             'mail_themes_uri' => '/mails/themes',

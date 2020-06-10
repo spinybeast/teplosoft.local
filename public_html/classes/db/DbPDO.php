@@ -81,7 +81,10 @@ class DbPDOCore extends Db
         }
         $dsn .= ';charset=utf8';
 
-        return new PDO($dsn, $user, $password, array(PDO::ATTR_TIMEOUT => $timeout, PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true));
+//        return new PDO($dsn, $user, $password, array(PDO::ATTR_TIMEOUT => $timeout, PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true));
+        $dbh = new PDO($dsn, $user, $password, array(PDO::ATTR_TIMEOUT => $timeout, PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true));
+        $dbh->exec("set names utf8");
+        return $dbh;
     }
 
     /**

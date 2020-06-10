@@ -14,7 +14,7 @@
                         {/if}
                     </div>
                     <div class="text-center">
-                        <span class="phone">+7 (961) 808-20-84</span>
+                        <span class="phone">{Configuration::get('PS_SHOP_PHONE')}</span>
                         <span class="hours">Пн-Пт с 9:00 до 18:00</span>
                     </div>
                     {if $page.page_name !== 'checkout'}
